@@ -30,6 +30,15 @@ li {
 body {
   font-family: 'Roboto', sans-serif;
   color: #797166;
+
+}
+
+main {
+  /* width: 100%; */
+}
+
+section {
+  width: 100%;
 }
 
 p,
@@ -44,6 +53,7 @@ li {
 .content_container {
   width: 90%;
   margin: auto;
+
 }
 
 .link_color {
@@ -76,7 +86,7 @@ li {
   position: relative;
   right: 40%;
   display: block;
-  width: 100%;
+  width: 90%;
   transform: rotate(90deg);
 }
 
@@ -89,6 +99,7 @@ li {
 
 .intro_container {
   margin-bottom: 20px;
+
 }
 
 .intro_container h1,
@@ -106,12 +117,13 @@ li {
 /********** Advertisement Section **********/
 
 .ad_container {
-  width: 100%;
   background-color: #51525a;
   text-align: center;
   color: #efe9e0;
+
 }
 
 .ad_text_container {
   padding: 30px 0;
+
 }
