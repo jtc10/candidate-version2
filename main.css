@@ -33,10 +33,6 @@ body {
 
 }
 
-main {
-  /* width: 100%; */
-}
-
 section {
   width: 100%;
 }
@@ -50,10 +46,11 @@ li {
   margin: 5px 0;
 }
 
+/* All content in <main> and <footer> contained inside this class */
 .content_container {
   width: 90%;
+  max-width: 650px;
   margin: auto;
-
 }
 
 .link_color {
@@ -76,6 +73,7 @@ li {
 
 }
 
+/* container logo image and <p> tag for date */
 .logo_bar {
   width: 95%;
   margin: auto;
@@ -83,23 +81,22 @@ li {
 }
 
 .logo_bar img {
-  position: relative;
-  right: 40%;
   display: block;
   width: 90%;
-  transform: rotate(90deg);
+  max-width: 700px;
+  margin: auto;
 }
 
 .logo_bar p {
-  font-size: 1.4rem;
+  font-size: 125%;
   color: #efe9e0;
 }
 
 /********* Introduction Container **********/
 
+/* Introduction <section> */
 .intro_container {
   margin-bottom: 20px;
-
 }
 
 .intro_container h1,
@@ -113,6 +110,7 @@ li {
   list-style-position: inside;
 }
 
+/* Class that holds ad for conference */
 .card {
   background-color: #f5f3f0;
   border: 2px solid #ddd;
@@ -120,12 +118,17 @@ li {
 
 .card_insert {
   width: 90%;
+}
+
+.card,
+.card_insert {
   margin: 15px auto;
 }
 
 
 /********** Advertisement Section **********/
 
+/* Container for <section> offering free content */
 .ad_container {
   background-color: #51525a;
   text-align: center;
@@ -140,6 +143,12 @@ li {
 
 /********** Speaker Section **********/
 
+.speaker_container,
+.speaker_text {
+  padding-bottom: 15px;
+}
+
+/* Container for individual speaker cards */
 .speaker_card {
   width: 100%;
   margin-bottom: 20px;
@@ -147,14 +156,12 @@ li {
             box-shadow: -1px 1px 5px 3px rgba(220,220,220,0.75);
 }
 
+/* Container for image and subject name inside speaker_card */
 .speaker_image_name,
+/* Container for text content inside speaker_card */
 .speaker_text {
-  width: 95%;
+  width: 90%;
   margin: auto;
-}
-
-.speaker_text {
-  padding-bottom: 15px;
 }
 
 .speaker_image_name,
@@ -164,12 +171,16 @@ li {
   padding: 15px 0;
 }
 
+.speaker_container h2 {
+  margin: 25px auto;
+}
+
 .speaker_image_name img {
   border-radius: 5px;
   display: block;
   width: 75%;
+  min-width: 75%;
   margin: auto;
-  /* min-width: 100%; */
 }
 
 /********** Footer *********/
@@ -178,9 +189,11 @@ footer {
   background-color: #51525a;
 }
 
+/* Container for all content inside <footer> */
 .footer_content_container {
   width: 90%;
   padding: 25px 0;
+  border-top: 1px solid  #99999e;
 }
 
 .footer_content_container,
@@ -210,4 +223,78 @@ footer {
 .footer_content_container p:nth-child(2) {
   color: #99999e;
   font-size: .7rem;
+}
+
+/********** Media Queries **********/
+/**********               **********/
+
+
+
+@media only screen and (min-width: 550px) {
+
+  /********** Speaker Section **********/
+
+  /* reverses order of speaker_card content when display:flex */
+  .row_reverse {
+    flex-direction: row-reverse;
+  }
+
+
+  .speaker_card {
+    display: flex;
+  }
+
+
+  .speaker_image_name {
+    width: 40%;
+    margin: auto;
+  }
+
+  .speaker_text {
+    padding: 15px 15px 15px;
+    width: 55%;
+  }
+
+  .speaker_image_name,
+  .speaker_container h2,
+  .speaker_image_name div {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .speaker_image_name img {
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    margin: auto;
+    min-width: 50%;
+  }
+
+
+}
+
+@media only screen and (min-width: 650px) {
+
+  .speaker_card {
+    width: 90%;
+  }
+
+/* used to float every second speaker_card to the right */
+  .row_reverse {
+    float: right;
+  }
+
+  .card {
+    clear: right;
+  }
+
+  .footer_flex_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer_flex_container p {
+    flex: 0 0 45%;
+  }
+
 }
