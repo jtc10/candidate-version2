@@ -70,7 +70,8 @@ li {
   background: url('images/background.jpg') no-repeat center;
   background-size: cover;
   display: flex;
-
+  /*fix for centering on IE */
+  flex-direction: column-reverse;
 }
 
 /* container logo image and <p> tag for date */
