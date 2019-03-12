@@ -240,7 +240,8 @@ footer {
 
   /********** Speaker Section **********/
 
-  /* reverses order of speaker_card content when display:flex */
+  /* Class that reverses order of speaker card content
+    on every second speaker card */
   .row_reverse {
     flex-direction: row-reverse;
   }
